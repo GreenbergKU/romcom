@@ -1,6 +1,6 @@
 # DTR: Define the Relationship
 
-**Project**: Romcom - Pair  
+**Project**: Romcom - Pair Project
 **Group Member Names**: Sue Wolf & Rachel Williams  
 
 * **What are each of our learning goals for this project? What drives us in this project?**  
