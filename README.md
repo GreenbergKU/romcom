@@ -50,7 +50,6 @@ By the end of the day, complete the following tasks:
 
 ## Progression
 
-For a description of iterations, visit [the project page](https://frontend.turing.io/projects/module-1/romcom-pair.html) on the curriculum site.
 
 ## Rubric
 
