@@ -1,11 +1,14 @@
 ---
-name: ROMCOM PULL REQUEST
-title: GENERAL PROJECT PULL REQUEST TEMPLATE
-project: MOD1 FE ROMCOM (paired project)
-participants: Rachel Williams and Suzanne Wolf
 
+project: ROMCOM 
+subject: PULL REQUEST TEMPLATE
+program: TURING MOD1 FE (paired project)
+title: GENERAL PROJECT PULL REQUEST TEMPLATE
+participants: Rachel Williams and Suzanne Wolf
+project manager: Leta
 
 ---
+
 
 PULL REQUEST TEMPLATE
 
