@@ -129,7 +129,6 @@ You are welcome to add your own extensions. Be sure they are thoughtful in terms
 - When a user single clicks a saved cover, create a modal to view it larger
 - Allow users to drag and drop saved posters into whatever order they want them to appear
 
-
 ## Rubric
 
 This rubric should serve as a guide for students as they progress through the project, as well as to self-evaluate. Instructors will use it to evaluate the project at its final due date/time, and provide detailed feedback so students know what areas to focus on in future projects.
