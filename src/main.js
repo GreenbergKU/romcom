@@ -16,7 +16,7 @@ randomCoverButton.addEventListener('click', getRandomBookCover);
 // Create your event handlers and other functions here 👇
 
 // We've provided one function to get you started
-
+document.onload = getRandomBookCover();
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -31,7 +31,6 @@ function getRandomBookCover() {
   currentCover = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
   displayCurrentCover();
 }
-getRandomBookCover();
 
 function displayCurrentCover() {
   mainCoverSection.innerHTML = `
