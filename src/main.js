@@ -10,18 +10,6 @@ var savedCovers = [
 
 var currentCover;
 
-var randomCover = covers[getRandomIndex(covers)];
-var randomTitle = titles[getRandomIndex(titles)];
-var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
-var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
-
-mainCoverSection.innerHTML = ` 
-  <img class="cover-image" src=${randomCover}>
-  <h2 class="cover-title">${randomTitle}</h2>
-  <h3 class="tagline">A tale of <span class="tagline-1">${randomDescriptor1}</span> and <span class="tagline-2">${randomDescriptor2}</span></h3>
-  <img class="price-tag" src="./assets/price.png">
-  <img class="overlay" src="./assets/overlay.png">`
-
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', getRandomBookCover);
 
@@ -43,6 +31,7 @@ function getRandomBookCover() {
   currentCover = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
   displayCurrentCover();
 }
+getRandomBookCover();
 
 function displayCurrentCover() {
   mainCoverSection.innerHTML = `
