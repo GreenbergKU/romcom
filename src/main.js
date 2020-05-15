@@ -11,7 +11,7 @@ var mainCoverSection = document.querySelector(".main-cover");
 var randomCoverButton = document.querySelector(".random-cover-button");
 
 var makeYourOwnButton = document.querySelector(".make-new-button");
-var viewSavedButton  = document.querySelector(".vew-saved-button");
+var viewSavedButton  = document.querySelector(".view-saved-button");
 var homeViewSection = document.querySelector(".home-view");
 var savedViewSection = document.querySelector(".saved-view");
 var formViewSection = document.querySelector(".form-view");
@@ -30,7 +30,20 @@ var currentCover;
 // Add your event listeners here 👇
 randomCoverButton.addEventListener("click", getRandomBookCover);
 makeYourOwnButton.addEventListener("click", displayFormView);
-//viewSavedButton.addEventListener("click", displaySavedView);
+viewSavedButton.addEventListener("click", displaySavedView);
+
+// function displaySavedView() {
+//   //remove 'hidden' from savedView view
+//     savedViewSection.classList.remove("hidden"); 
+//   //add 'hidden' to homeView
+//     homeViewSection.classList.add("hidden");
+//   //access 'classList' to add/remove class 'hidden'
+//   //add 'hidden' showRandom, saveCover
+//     randomCoverButton.classList.add("hidden"); 
+//     saveCoverButton.classList.add("hidden");
+//   //remove 'hidden' from homeButton
+//     homeButton.classList.remove("hidden"); 
+//   }
 
 // Create your event handlers and other functions here 👇
 
@@ -75,6 +88,15 @@ function displayFormView() {
   homeButton.classList.remove("hidden"); 
 }
    
-//function displaySavedView() {
-  //savedViewSection
-//}
+function displaySavedView() {
+//remove 'hidden' from savedView view
+  savedViewSection.classList.remove("hidden"); 
+//add 'hidden' to homeView
+  homeViewSection.classList.add("hidden");
+//access 'classList' to add/remove class 'hidden'
+//add 'hidden' showRandom, saveCover
+  randomCoverButton.classList.add("hidden"); 
+  saveCoverButton.classList.add("hidden");
+//remove 'hidden' from homeButton
+  homeButton.classList.remove("hidden"); 
+}
