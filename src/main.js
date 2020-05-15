@@ -1,7 +1,24 @@
+//Iteration2
+/*
+- querySelector- button: makeYourOwn, viewSavedCovers, view: homeView, savedView, formView
+- addEventListener- ^^^^^^^^^^^^^^^^^^^^^^
+
+*/
+
 // Create variables targetting the relevant DOM elements here 👇
 
 var mainCoverSection = document.querySelector(".main-cover");
 var randomCoverButton = document.querySelector(".random-cover-button");
+
+var makeYourOwnButton = document.querySelector(".make-new-button");
+var viewSavedButton  = document.querySelector(".vew-saved-button");
+var homeViewSection = document.querySelector(".home-view");
+var savedViewSection = document.querySelector(".saved-view");
+var formViewSection = document.querySelector(".form-view");
+
+var homeButton = document.querySelector(".home-button");
+var saveCoverButton = document.querySelector(".save-cover-button");
+
 
 // We've provided a few variables below
 var savedCovers = [
@@ -11,7 +28,9 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-randomCoverButton.addEventListener('click', getRandomBookCover);
+randomCoverButton.addEventListener("click", getRandomBookCover);
+makeYourOwnButton.addEventListener("click", displayFormView);
+//viewSavedButton.addEventListener("click", displaySavedView);
 
 // Create your event handlers and other functions here 👇
 
@@ -43,3 +62,19 @@ function displayCurrentCover() {
   `
 }
 
+function displayFormView() {
+//remove 'hidden' from form view
+//add 'hidden' to home view
+//access 'classList' to add/remove class 'hidden'
+  homeViewSection.classList.add("hidden");
+  formViewSection.classList.remove("hidden");  
+//add 'hidden' showRandom, saveCover
+  randomCoverButton.classList.add("hidden"); 
+  saveCoverButton.classList.add("hidden");
+//remove 'hidden' from homeButton
+  homeButton.classList.remove("hidden"); 
+}
+   
+//function displaySavedView() {
+  //savedViewSection
+//}
