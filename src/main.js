@@ -67,6 +67,8 @@ function displayFormView() {
   homeButton.classList.remove("hidden");
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.remove("hidden");
+  makeYourOwnButton.classList.add("hidden");
+  //hide makeyourownbutton
 }
 
 function displaySavedView() {
@@ -78,6 +80,7 @@ function displaySavedView() {
   homeButton.classList.remove("hidden");
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.add("hidden");
+  makeYourOwnButton.classList.remove("hidden");
 }
 
 function displayHomeView() {
@@ -89,6 +92,7 @@ function displayHomeView() {
   saveCoverButton.classList.remove("hidden");
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.remove("hidden");
+  makeYourOwnButton.classList.remove("hidden");
 }
 
 function collectUserInput() {
