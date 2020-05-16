@@ -57,22 +57,21 @@ People say that romance novels are formulaic. Well ... maybe that's true. We're 
 
 #### SCREENSHOTS
 
-<!-->
+<!--
 ##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
 
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
-
-
-##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
-
-<img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
-
 
 ##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
 
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
 
 -->
+
+##### `  LARGE 1000 DESCRIPTION (img title/description/caption)  `
+
+<img width="931" alt="LARGE 931 DESCRIPTION: Screen Shot " src="https://user-images.githubusercontent.com/10098034/82116022-c00dc980-9723-11ea-8daf-b2b8a9a662b0.png">
+
 
 ### ITERATION 1:  Show Random Cover
 
@@ -91,22 +90,19 @@ People say that romance novels are formulaic. Well ... maybe that's true. We're 
 
 #### SCREENSHOTS
 
-<!-->
+<!--
+##### `  MEDIUM 628 DESCRIPTION (img title/description/caption)  `
+<img width="628" alt="MEDIUM 628 DESCRIPTION: Screen Shot 2020-05-15 at 10 12 03 PM" src="https://user-images.githubusercontent.com/10098034/82116036-e03d8880-9723-11ea-9275-501662f42e81.png">  
 ##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
-
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
-
-
-##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
-
-<img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
-
-
 ##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
-
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
-
 -->
+
+##### `  MEDIUM 628 DESCRIPTION (img title/description/caption)  `
+
+<img width="628" alt="MEDIUM 628 DESCRIPTION: Screen Shot 2020-05-15 at 10 12 03 PM" src="https://user-images.githubusercontent.com/10098034/82116036-e03d8880-9723-11ea-9275-501662f42e81.png">
+
 
 ### ITERATION 2: Switching Views
 
@@ -138,7 +134,6 @@ For both the Make New Cover form section and the Saved Covers section:
 
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
 
-
 ##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
 
 <img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
@@ -149,6 +144,13 @@ For both the Make New Cover form section and the Saved Covers section:
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
 
 -->
+##### `  MEDIUM 628 DESCRIPTION (img title/description/caption)  `
+
+<img width="628" alt="MEDIUM 628 DESCRIPTION: Screen Shot 2020-05-15 at 10 06 43 PM" src="https://user-images.githubusercontent.com/10098034/82116106-517d3b80-9724-11ea-8a75-42971a4bcd26.png">
+
+##### `  MEDIUM 628 DESCRIPTION (img title/description/caption)  `
+
+<img width="628" alt="MEDIUM 628 DESCRIPTION: Screen Shot 2020-05-15 at 10 16 56 PM" src="https://user-images.githubusercontent.com/10098034/82116115-707bcd80-9724-11ea-9fb0-5a0b96b6f878.png">
 
 
 ### ITERATION 3: Creating a New Cover
@@ -174,19 +176,16 @@ For both the Make New Cover form section and the Saved Covers section:
 
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
 
-
-##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
-
-<img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
-
-
 ##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
 
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
-
 -->
 
-<!-- 
+##### `  MEDIUM-LARGE 850 DESCRIPTION (img title/description/caption)  `
+
+<img width="850" alt="MEDIUM-LARGE 850 DESCRIPTION: Screen Shot 2020-05-16 at 3 04 51 AM" src="https://user-images.githubusercontent.com/10098034/82116110-5c37d080-9724-11ea-85e9-30590f334fb5.png">
+
+
 ### ITERATION 4: Saving & Viewing Covers
 
 #### Brief Synopsis of Objectives 
@@ -203,6 +202,7 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### SCREENSHOTS
 
+<!--
 ##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
 
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
@@ -216,10 +216,9 @@ For both the Make New Cover form section and the Saved Covers section:
 ##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
 
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
-
 -->
 
-<!-- 
+
 ### ITERATION 5: (extra/optional) 
 
 #### Brief Synopsis of Objectives 
@@ -232,6 +231,7 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### SCREENSHOTS
 
+<!--
 ##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
 
 ![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
@@ -245,5 +245,6 @@ For both the Make New Cover form section and the Saved Covers section:
 ##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
 
 <img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
+-->
 
 -->
