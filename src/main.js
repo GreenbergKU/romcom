@@ -97,12 +97,17 @@ function displayHomeView() {
 
 function collectUserInput() {
   event.preventDefault();
-  covers.push(userImageInput.value);
-  titles.push(userTitleInput.value);
-  descriptors.push(userDescriptor1.value, userDescriptor2.value);
-  currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
-  createNewCover();
-  displayHomeView();
+  if (userImageInput.value !== '' || userTitleInput.value !== '' || userDescriptor1.value !== '' || userDescriptor2.value !== '' ) {
+//test for '' in each value, if it is, don't push
+    covers.push(userImageInput.value);
+    titles.push(userTitleInput.value);
+    descriptors.push(userDescriptor1.value, userDescriptor2.value);
+    currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
+    createNewCover();
+    displayHomeView();
+  } else {
+    alert("Form is incomplete!")
+  }
 }
 
 function createNewCover() {
