@@ -1,3 +1,9 @@
+// Iteration 4
+// - When a user clicks the "Save Cover" button, the current cover will be added to the `savedCovers` array
+// - If a user clicks the "Save Cover" more than once on a single cover, it will still only be saved once (no duplicates)
+// - When a user clicks the "View Saved Covers" button, we should see the saved covers section
+// - All the covers in the `savedCovers` array should be displayed in the saved covers section
+
 // Create variables targetting the relevant DOM elements here 👇
 var mainCoverSection = document.querySelector(".main-cover");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -14,7 +20,6 @@ var userTitleInput = document.querySelector(".user-title");
 var userDescriptor1 = document.querySelector(".user-desc1");
 var userDescriptor2 = document.querySelector(".user-desc2");
 
-
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -28,7 +33,8 @@ makeYourOwnButton.addEventListener("click", displayFormView);
 viewSavedButton.addEventListener("click", displaySavedView);
 homeButton.addEventListener("click", displayHomeView);
 createNewBookButton.addEventListener("click", collectUserInput);
-
+//Iter4
+saveCoverButton.addEventListener("click", saveCurrentCover);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -98,7 +104,6 @@ function displayHomeView() {
 function collectUserInput() {
   event.preventDefault();
   if (userImageInput.value !== '' || userTitleInput.value !== '' || userDescriptor1.value !== '' || userDescriptor2.value !== '' ) {
-//test for '' in each value, if it is, don't push
     covers.push(userImageInput.value);
     titles.push(userTitleInput.value);
     descriptors.push(userDescriptor1.value, userDescriptor2.value);
@@ -107,10 +112,27 @@ function collectUserInput() {
     displayHomeView();
   } else {
     alert("Form is incomplete!")
-  }
+  };
 }
 
 function createNewCover() {
   currentCover = new Cover(currentCover[0], currentCover[1], currentCover[2], currentCover[3]);
   displayCurrentCover();
 };
+
+function saveCurrentCover() {
+  var coversMatch;
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (savedCovers[i].cover === currentCover.cover && 
+      savedCovers[i].title === currentCover.title && 
+      savedCovers[i].tagline1 === currentCover.tagline1 && 
+      savedCovers[i].tagline2 === currentCover.tagline2) {
+          coversMatch = true; 
+          break; 
+    };
+    coversMatch = false 
+  };
+  if (coversMatch === false) {
+    savedCovers.push(currentCover) 
+  };
+}
