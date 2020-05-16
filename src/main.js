@@ -103,7 +103,7 @@ function displayHomeView() {
 
 function collectUserInput() {
   event.preventDefault();
-  if (userImageInput.value !== '' || userTitleInput.value !== '' || userDescriptor1.value !== '' || userDescriptor2.value !== '' ) {
+  if (userImageInput.value && userTitleInput.value && userDescriptor1.value && userDescriptor2.value) {
     covers.push(userImageInput.value);
     titles.push(userTitleInput.value);
     descriptors.push(userDescriptor1.value, userDescriptor2.value);
