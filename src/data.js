@@ -12,6 +12,7 @@ var covers = [
   './assets/wildwest.jpg',
   './assets/windswept.jpg',
 ];
+//given covers.length = 12
 
 var titles = [
   "Passionate Moonlight",
@@ -24,7 +25,7 @@ var titles = [
   "Stolen Hearts",
   "Secrets and Silk",
   "Dreams of Fire",
-  "Lovers and Enemies",,
+  "Lovers and Enemies",
   "Passion's Embrace",
   "Harbinger by Moonlight",
   "Rouge Red",
@@ -40,6 +41,7 @@ var titles = [
   "Sapphire Skies",
   "Opal Passions"
 ];
+//given titles.length = 25;
 
 var descriptors = [
   "passion",
@@ -75,3 +77,4 @@ var descriptors = [
   "blessings",
   "melancholy"
 ];
+//given descriptors.length = 32
