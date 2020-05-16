@@ -8,7 +8,6 @@ var savedViewSection = document.querySelector(".saved-view");
 var formViewSection = document.querySelector(".form-view");
 var homeButton = document.querySelector(".home-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
-//Iteration3
 var createNewBookButton = document.querySelector(".create-new-book-button");
 var userImageInput = document.querySelector(".user-cover");
 var userTitleInput = document.querySelector(".user-title");
@@ -28,7 +27,6 @@ randomCoverButton.addEventListener("click", getRandomBookCover);
 makeYourOwnButton.addEventListener("click", displayFormView);
 viewSavedButton.addEventListener("click", displaySavedView);
 homeButton.addEventListener("click", displayHomeView);
-//Iteration 3
 createNewBookButton.addEventListener("click", collectUserInput);
 
 
@@ -45,8 +43,8 @@ function getRandomBookCover() {
   var randomCover = covers[getRandomIndex(covers)];
   var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
   var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
-  currentCover = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
-  displayCurrentCover();
+  currentCover = [randomCover, randomTitle, randomDescriptor1, randomDescriptor2];
+  createNewCover();
 }
 
 function displayCurrentCover() {
@@ -93,10 +91,17 @@ function displayHomeView() {
   viewSavedButton.classList.remove("hidden");
 }
 
-// Iteration 3
 function collectUserInput() {
   event.preventDefault();
   covers.push(userImageInput.value);
   titles.push(userTitleInput.value);
   descriptors.push(userDescriptor1.value, userDescriptor2.value);
+  currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
+  createNewCover();
+  displayHomeView();
 }
+
+function createNewCover() {
+  currentCover = new Cover(currentCover[0], currentCover[1], currentCover[2], currentCover[3]);
+  displayCurrentCover();
+};
