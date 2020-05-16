@@ -19,6 +19,9 @@ var userImageInput = document.querySelector(".user-cover");
 var userTitleInput = document.querySelector(".user-title");
 var userDescriptor1 = document.querySelector(".user-desc1");
 var userDescriptor2 = document.querySelector(".user-desc2");
+///// iter4
+var savedCoversSection = document.querySelector(".saved-covers-section")
+
 
 // We've provided a few variables below
 var savedCovers = [
@@ -35,6 +38,7 @@ homeButton.addEventListener("click", displayHomeView);
 createNewBookButton.addEventListener("click", collectUserInput);
 //Iter4
 saveCoverButton.addEventListener("click", saveCurrentCover);
+//savedCoversSection.addEventListener("click", displayMiniCovers);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -64,6 +68,22 @@ function displayCurrentCover() {
   `
 }
 
+function displayMiniCovers() {
+  var miniCoversHTML = "";
+  savedCovers.forEach(function(cover) {
+    miniCoversHTML += `
+      <img class="main-cover" src=${cover.cover}>
+         <h2 class="cover-title">${cover.title}</h2>
+         <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
+         <img class="price-tag" src="./assets/price.png">
+         <img class="overlay" src="./assets/overlay.png">
+    `
+  })
+  savedCoversSection.classList.add("mini-cover");
+  savedCoversSection.innerHTML = miniCoversHTML;
+}
+
+
 function displayFormView() {
   homeViewSection.classList.add("hidden");
   savedViewSection.classList.add("hidden");
@@ -87,6 +107,8 @@ function displaySavedView() {
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.add("hidden");
   makeYourOwnButton.classList.remove("hidden");
+  //Iter4
+  displayMiniCovers();
 }
 
 function displayHomeView() {
