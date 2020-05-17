@@ -69,18 +69,17 @@ function displayCurrentCover() {
 }
 
 function displayMiniCovers() {
-  var miniCoversHTML = "";
+  savedCoversSection.innerHTML = "";
   savedCovers.forEach(function(cover) {
-    miniCoversHTML += `
-      <img class="main-cover" src=${cover.cover}>
-         <h2 class="cover-title">${cover.title}</h2>
-         <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
-         <img class="price-tag" src="./assets/price.png">
-         <img class="overlay" src="./assets/overlay.png">
-    `
+  savedCoversSection.insertAdjacentHTML("afterbegin", `
+    <div class="mini-cover" data-id=${cover.id}>
+      <img class="cover-image" src=${cover.cover}>
+      <h2 class="cover-title">${cover.title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
+      <img class="price-tag" src="./assets/price.png">
+      <img class="overlay" src="./assets/overlay.png">
+    </div>`)
   })
-  savedCoversSection.classList.add("mini-cover");
-  savedCoversSection.innerHTML = miniCoversHTML;
 }
 
 
@@ -149,8 +148,8 @@ function saveCurrentCover() {
       savedCovers[i].title === currentCover.title && 
       savedCovers[i].tagline1 === currentCover.tagline1 && 
       savedCovers[i].tagline2 === currentCover.tagline2) {
-          coversMatch = true; 
-          break; 
+        coversMatch = true; 
+        break; 
     };
     coversMatch = false 
   };
