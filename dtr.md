@@ -5,7 +5,7 @@
 **Group Member Names**: Sue Wolf & Rachel Williams  
 
 * **What are each of our learning goals for this project? What drives us in this project?**  
-We're to learn & understand fundamentals as much as possible, and learning how best to collaborate.
+We're here to learn & understand fundamentals as much as possible, and learning how best to collaborate.
 
 * **What is your collaboration style? How do you feel about pair programming vs. divide-and-conquer approaches?**  
 We will mostly do pair programming so we can work together efficiently. When we get stuck, we will work independently to find answers and play around, then come together.

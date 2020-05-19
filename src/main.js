@@ -1,9 +1,3 @@
-// Iteration 4
-// - When a user clicks the "Save Cover" button, the current cover will be added to the `savedCovers` array
-// - If a user clicks the "Save Cover" more than once on a single cover, it will still only be saved once (no duplicates)
-// - When a user clicks the "View Saved Covers" button, we should see the saved covers section
-// - All the covers in the `savedCovers` array should be displayed in the saved covers section
-
 // Create variables targetting the relevant DOM elements here 👇
 var mainCoverSection = document.querySelector(".main-cover");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -36,9 +30,7 @@ makeYourOwnButton.addEventListener("click", displayFormView);
 viewSavedButton.addEventListener("click", displaySavedView);
 homeButton.addEventListener("click", displayHomeView);
 createNewBookButton.addEventListener("click", collectUserInput);
-//Iter4
 saveCoverButton.addEventListener("click", saveCurrentCover);
-//Iter5
 savedCoversSection.addEventListener("dblclick", deleteSelectedCover);
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -79,26 +71,23 @@ function displayMiniCovers() {
       <img class="price-tag" src="./assets/price.png">
       <img class="overlay" src="./assets/overlay.png">
     </div>`)
-  })
+  });
 }
 
-//////SUE"S iter5 notes
+
 function deleteSelectedCover(event) {
   var targetCoverId = event.target.parentNode.id;
-  // var notTargetCovers = [];
-  console.log(
-    'A:console.log(event.target)=', event.target,
-    'B:Console.log(event.target.parentNode)=', event.target.parentNode,
-    'C:Console.log(event.target.parentNote.id)=', event.target.parentNode.id,
-    'D:console.log(targetCoverId)=', targetCoverId,
-    );
+  // console.log(
+  //   'A:console.log(event.target)=', event.target,
+  //   'B:Console.log(event.target.parentNode)=', event.target.parentNode,
+  //   'C:Console.log(event.target.parentNote.id)=', event.target.parentNode.id,
+  //   'D:console.log(targetCoverId)=', targetCoverId,
+  //   );
   savedCovers = savedCovers.filter(function(cover) {
-    console.log(cover.id, targetCoverId);
+    // console.log(cover.id, targetCoverId);
     return cover.id != targetCoverId
-  })
-  // savedCovers = savedCovers.filter(cover =>
-  //   cover.id != targetCoverId);
-  console.log('E:-after filter()- console.log(savedCovers)=', savedCovers)
+  });
+  // console.log('E:-after filter()- console.log(savedCovers)=', savedCovers)
   displayMiniCovers();
 }
 
@@ -126,9 +115,7 @@ function displaySavedView() {
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.add("hidden");
   makeYourOwnButton.classList.remove("hidden");
-  //Iter4
   displayMiniCovers();
-  //Iter 5
 }
 
 function displayHomeView() {
@@ -145,29 +132,32 @@ function displayHomeView() {
 
 function collectUserInput() {
   event.preventDefault();
-  if (userImageInput.value && userTitleInput.value && userDescriptor1.value && userDescriptor2.value) {
-    covers.push(userImageInput.value);
-    titles.push(userTitleInput.value);
-    descriptors.push(userDescriptor1.value, userDescriptor2.value);
-    currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
-    createNewCover();
-    displayHomeView();
+  if (userImageInput.value &&
+    userTitleInput.value &&
+    userDescriptor1.value &&
+    userDescriptor2.value) {
+      covers.push(userImageInput.value);
+      titles.push(userTitleInput.value);
+      descriptors.push(userDescriptor1.value, userDescriptor2.value);
+      currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
+      createNewCover();
+      displayHomeView();
   } else {
-    alert("Form is incomplete!")
+      alert("Form is incomplete!")
   };
 }
 
 function createNewCover() {
   currentCover = new Cover(currentCover[0], currentCover[1], currentCover[2], currentCover[3]);
   displayCurrentCover();
-};
+}
 
 function saveCurrentCover() {
   var coversMatch;
   if (savedCovers.length === 0 ) {
     savedCovers.push(currentCover)
     return
-  }
+  };
   for (var i = 0; i < savedCovers.length; i++) {
     if (savedCovers[i].cover === currentCover.cover &&
       savedCovers[i].title === currentCover.title &&
@@ -182,18 +172,3 @@ function saveCurrentCover() {
     savedCovers.push(currentCover)
   };
 }
-
-
-//Iter5
-function deleteMiniCovers(event) {
-  console.log(event);
-  var IdToDelete = event.target.id;
-  for (var i = 0; i < savedCovers.length; i++) {
-    console.log("ID to Delete: " + IdToDelete);
-    console.log("id from cover instance: " + savedCovers[i].id);
-    if (IdToDelete == savedCovers[i].id) {
-      savedCovers.splice(i, 1);
-    };
-  };
-  displayMiniCovers();
-};
