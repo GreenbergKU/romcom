@@ -1,9 +1,3 @@
-// Iteration 4
-// - When a user clicks the "Save Cover" button, the current cover will be added to the `savedCovers` array
-// - If a user clicks the "Save Cover" more than once on a single cover, it will still only be saved once (no duplicates)
-// - When a user clicks the "View Saved Covers" button, we should see the saved covers section
-// - All the covers in the `savedCovers` array should be displayed in the saved covers section
-
 // Create variables targetting the relevant DOM elements here 👇
 var mainCoverSection = document.querySelector(".main-cover");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -20,13 +14,13 @@ var userTitleInput = document.querySelector(".user-title");
 var userDescriptor1 = document.querySelector(".user-desc1");
 var userDescriptor2 = document.querySelector(".user-desc2");
 ///// iter4
-var savedCoversSection = document.querySelector(".saved-covers-section")
+var savedCoversSection = document.querySelector(".saved-covers-section");
 
 
 // We've provided a few variables below
-var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
+var savedCovers = [];
+  // new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+
 
 var currentCover;
 
@@ -36,13 +30,11 @@ makeYourOwnButton.addEventListener("click", displayFormView);
 viewSavedButton.addEventListener("click", displaySavedView);
 homeButton.addEventListener("click", displayHomeView);
 createNewBookButton.addEventListener("click", collectUserInput);
-//Iter4
 saveCoverButton.addEventListener("click", saveCurrentCover);
-//savedCoversSection.addEventListener("click", displayMiniCovers);
-
+savedCoversSection.addEventListener("dblclick", deleteSelectedCover);
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
-document.onload = getRandomBookCover();
+window.onload = getRandomBookCover();
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -72,14 +64,31 @@ function displayMiniCovers() {
   savedCoversSection.innerHTML = "";
   savedCovers.forEach(function(cover) {
   savedCoversSection.insertAdjacentHTML("afterbegin", `
-    <div class="mini-cover" data-id=${cover.id}>
-      <img class="cover-image" src=${cover.cover}>
+   <div class="mini-cover" id=${cover.id}>
+     <img class="cover-image" src=${cover.cover}>
       <h2 class="cover-title">${cover.title}</h2>
       <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
       <img class="price-tag" src="./assets/price.png">
       <img class="overlay" src="./assets/overlay.png">
     </div>`)
-  })
+  });
+}
+
+
+function deleteSelectedCover(event) {
+  var targetCoverId = event.target.parentNode.id;
+  // console.log(
+  //   'A:console.log(event.target)=', event.target,
+  //   'B:Console.log(event.target.parentNode)=', event.target.parentNode,
+  //   'C:Console.log(event.target.parentNote.id)=', event.target.parentNode.id,
+  //   'D:console.log(targetCoverId)=', targetCoverId,
+  //   );
+  savedCovers = savedCovers.filter(function(cover) {
+    // console.log(cover.id, targetCoverId);
+    return cover.id != targetCoverId
+  });
+  // console.log('E:-after filter()- console.log(savedCovers)=', savedCovers)
+  displayMiniCovers();
 }
 
 
@@ -106,7 +115,6 @@ function displaySavedView() {
 //*************ADDED code BELOW to ITER2 ********
   viewSavedButton.classList.add("hidden");
   makeYourOwnButton.classList.remove("hidden");
-  //Iter4
   displayMiniCovers();
 }
 
@@ -124,36 +132,43 @@ function displayHomeView() {
 
 function collectUserInput() {
   event.preventDefault();
-  if (userImageInput.value && userTitleInput.value && userDescriptor1.value && userDescriptor2.value) {
-    covers.push(userImageInput.value);
-    titles.push(userTitleInput.value);
-    descriptors.push(userDescriptor1.value, userDescriptor2.value);
-    currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
-    createNewCover();
-    displayHomeView();
+  if (userImageInput.value &&
+    userTitleInput.value &&
+    userDescriptor1.value &&
+    userDescriptor2.value) {
+      covers.push(userImageInput.value);
+      titles.push(userTitleInput.value);
+      descriptors.push(userDescriptor1.value, userDescriptor2.value);
+      currentCover = [userImageInput.value, userTitleInput.value, userDescriptor1.value, userDescriptor2.value];
+      createNewCover();
+      displayHomeView();
   } else {
-    alert("Form is incomplete!")
+      alert("Form is incomplete!")
   };
 }
 
 function createNewCover() {
   currentCover = new Cover(currentCover[0], currentCover[1], currentCover[2], currentCover[3]);
   displayCurrentCover();
-};
+}
 
 function saveCurrentCover() {
   var coversMatch;
+  if (savedCovers.length === 0 ) {
+    savedCovers.push(currentCover)
+    return
+  };
   for (var i = 0; i < savedCovers.length; i++) {
-    if (savedCovers[i].cover === currentCover.cover && 
-      savedCovers[i].title === currentCover.title && 
-      savedCovers[i].tagline1 === currentCover.tagline1 && 
+    if (savedCovers[i].cover === currentCover.cover &&
+      savedCovers[i].title === currentCover.title &&
+      savedCovers[i].tagline1 === currentCover.tagline1 &&
       savedCovers[i].tagline2 === currentCover.tagline2) {
-        coversMatch = true; 
-        break; 
+        coversMatch = true;
+        break;
     };
-    coversMatch = false 
+    coversMatch = false
   };
   if (coversMatch === false) {
-    savedCovers.push(currentCover) 
+    savedCovers.push(currentCover)
   };
 }
