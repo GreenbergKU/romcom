@@ -1,102 +1,140 @@
+<!--
+project: ROMCOM (paired)
+program: TURING MOD1 FE 2005
+title: README
+participants: Rachel Williams and Suzanne Wolf
+-->
 ---
-title: RomCom - Pair
+# ROMCOM: paired project
 ---
+
+<img width="1000" alt="book cover text: ROMCOM, a Turing School Frontend modular 1 project, size: LARGE:100"
+src="https://user-images.githubusercontent.com/10098034/82287824-54637080-995e-11ea-8eb7-9fd3d7875134.png">
+
+---
+![Leta's slack profile picture (small)](https://ca.slack-edge.com/T029P2S9M-U37MJAV0T-007ccf2f5eb2-72)
+![Rachel's slack profile picture (small)](https://ca.slack-edge.com/T029P2S9M-U010JFP5L1H-261729a15d0e-72) 
+![Sue's slack profile picture (small)](https://ca.slack-edge.com/T029P2S9M-UTPTTDE84-13b671276cf8-72) 
+
+* project manager: __Leta__ [(GitHub profile)](https://github.com/turingschool-examples)
+* contributer: __Rachel__ [(GitHub profile)](https://github.com/rwilliams659)
+* contributer: __Sue__ [(GitHub profile)](https://github.com/GreenbergKU)
+---
+
+## Overview
+  * **People say that romance novels are formulaic.** 
+  * **_Well... maybe that's true!_** </br>
+  * **We're going to make an app that generates romance novel covers!**
 
 ## Learning Goals
-
 * Write clean, DRY JavaScript to store our data
 * Use a provided class by creating object instances using the `new` keyword
 * Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
 * Understand event bubbling and use event delegation on dynamic elements
 * Begin to understand how to write effective, clean HTML & CSS
 
-## Overview
+## ROMCOM's official documention:
+  - [DTR:](https://github.com/GreenbergKU/ROMCOM/blob/master/DTR.md) "Define the Relationship" for project. 
+  - [Pull Request Template:](https://github.com/GreenbergKU/ROMCOM/blob/master/pull_request_template.md) image provided below)
 
-People say that romance novels are formulaic. Well ... maybe that's true. We're going to make an app that generates romance novel covers!
+## Additional LINKS
+  - Github Pages website: [Project ROMCOM](https://greenbergKU.github.io/ROMCOM/)
+  - Turing's origonal project on GitHub: [ROMCOM repository](https://github.com/turingschool-examples/ideabox-boilerplate)
+  - ROMCOM project's PRIVATE [Slack channel](https://app.slack.com/client/T029P2S9M/C011E891RC1)
+  - Turing.io frontend project (curriculum website): [ROMCOM (iterations)](https://frontend.turing.io/projects/module-1/romcom-pair.html)
 
-## Set Up
+---
+---
+# ROMCOM Progression
 
-To begin, choose ONE PARTNER to do the following:
+---
+### ITERATION 0: Main Page
+---
 
-1. Fork this boilerplate repository
-2. Clone down your new, forked repo
-3. `cd` into the repository
-4. Open it in your text editor
-5. View the project in the browser by running `open index.html` in your terminal
-5. Add all project partners and your assigned instructor as collaborators on the repository
+#### Brief Synopsis of Objectives 
 
-Then, as a team:
+* When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
 
-* Explore the repository to see what's going on in the code
-  - Look at each file: `index.html`, `styles.css`, `data.js`, `Cover.js`, `main.js`
-  - _Note: no imports or exports are needed because each JS file is linked in the HTML_
-  - Even if you don't know what each piece of the code is doing, talk through what you think is going on
-* What pieces of code might you use to complete iterations, and what pieces will you have to create?
-* All of your work will take place in `main.js` - you will not need to change any other files!
+#### Summary of Progress
 
-## Day 1 Deliverables
+* First, we added functionality for the main page so it displays a random cover on page load. 
+  - To achieve this, we used the getRandomIndex function to generate random covers, titles, and descriptors. 
+  - We then altered the code for the mainCoverSection, using the .innerHTML property to change the cover, title, and descriptors to random values using string interpolation.
 
-By the end of the day, complete the following tasks:
+#### SCREENSHOTS
 
-* As a team, read the entire project spec and rubric
-* As a team, create a rough timeline to follow 
-* As a team, create a public document for your DTR (instructions can be found [here](https://github.com/turingschool/career-development-curriculum/blob/master/module_one/dtr_guidelines_memo.md))
-* Make sure all teammates are added as collaborators to the forked repository
-* Create a private Slack channel with all members of the project AND your assigned instructor and share links to:
-  - the forked GitHub repo
-  - the GitHub Pages deployed site
-    - Under your repo's settings, scroll down to GitHub Pages and set it up to deploy your master branch
-  - the DTR
+##### `  "RANDOM BOOK COVER ON MAIN PAGE DISPLAY, AFTER PAGE LOAD  `
 
-## Progression
+<img width="600" alt="RANDOM BOOK COVER ON MAIN PAGE DISPLAY, AFTER PAGE LOAD (size:Med)" src="https://user-images.githubusercontent.com/10098034/82116022-c00dc980-9723-11ea-8daf-b2b8a9a662b0.png">
 
+---
+### ITERATION 1:  Show Random Cover
+---
 
-For a description of iterations, visit [the project page](https://frontend.turing.io/projects/module-1/romcom-pair.html) on the curriculum site.
+#### Brief Synopsis of Objectives 
 
-### Iteration 0 - Main Page
+* Every time the user clicks the Show New Random Cover button, a new random cover is created
+    - _hint: you may need to update the value of the provided `currentCover` variable_
+    - _hint: use that Cover class!_
+* Every time the user clicks the Show New Random Cover button, the random cover is displayed
+    - _hint: you may need to create a function that displays information on the DOM_
 
-<img src="./assets/romcom/romcom-home.png" alt="Homepage">
+#### Summary of Progress
 
-- When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
+* Next, we added functionality so that the user can continually generate new covers by clicking the "Show New Random Cover" button. 
+  - This action causes the getRandomBookCover function to execute, which assigns the currentCover variable to be a new instance of the Cover class with a random cover, title, and two descriptors. 
+* Then the displayCurrentCover function is called, which replaces the HTML in the main cover section with the values from that class instance to display the new cover. 
+  - These changes meant refactoring much of our code blocks from the previous iteration be more dynamic by placing them within functions. 
+  - Therefore, to get a random cover to generate on page load again, we added an 'onload' event handler that calls the getRandomBookCover function detailed above.
 
-### Iteration 1 - Show Random Cover
+#### SCREENSHOTS
 
-<img src="./assets/romcom/romcom-random.png" alt="Randomize">
+##### `  MAIN PAGE DISPLAYING A RANDOM BOOK COVER  `
 
-- Every time the user clicks the Show New Random Cover button, a new random cover is created
-    - hint: you may need to update the value of the provided `currentCover` variable
-    - hint: use that Cover class!
-- Every time the user clicks the Show New Random Cover button, the random cover is displayed
-    - hint: you may need to create a function that displays information on the DOM
+<img width="600" alt="MAIN PAGE DISPLAYING A RANDOM BOOK COVER  (size:MED)" src="https://user-images.githubusercontent.com/10098034/82116036-e03d8880-9723-11ea-9275-501662f42e81.png">
 
-### Iteration 2 - Switching Views
+---
+### ITERATION 2: Switching Views
+---
 
-**NOTE:** in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
+#### Brief Synopsis of Objectives 
 
-Form view:
-<img src="./assets/romcom/romcom-form.png" alt="Form">
+**NOTE:** _in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons._
+* Form view:
+  - When a user clicks the "Make Your Own Cover" button, we should see the form, and the homepage view should be hidden
+  - When the Form view is visible, the "Show New Random Cover" and "Save Cover" buttons should be hidden
+  - When the Form view is visible, the "Home" button should be visible
+* Saved covers view:
+  - When a user clicks the "View Saved Covers" button, we should see the saved covers section, and the homepage view should be hidden
+  - When the Saved Covers view is visible, the "Show New Random Cover" and "Save Cover" buttons should be hidden
+  - When the Saved Covers view is visible, the "Home" button should be visible
+* For both the Make New Cover form section and the Saved Covers section:
+  - In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+  - When a user clicks the "Home" button, we should only see the Home section
+  - When a user clicks the "Home" button, the home button should be hidden
+  - When a user clicks the "Home" button, the "Show New Random Cover" and "Save Cover" buttons should be visible again
 
-- When a user clicks the "Make Your Own Cover" button, we should see the form, and the homepage view should be hidden
-- When the Form view is visible, the "Show New Random Cover" and "Save Cover" buttons should be hidden
-- When the Form view is visible, the "Home" button should be visible
+#### Summary of Progress
 
-Saved covers view:
-<img src="./assets/romcom/romcom-saved.png" alt="Homepage">
+* Next, we added functionality to make the correct views appear when clicking the buttons, 'Make Your Own Cover', 'View Saved Covers', and 'Home'. 
+  - By using the addEventListener() method, we were able to have a function for each view execute when each respective button is clicked. 
+  - These functions use the classList() method to add the "hidden" class to all views that are not the one we want to display, as well as adding and removing "hidden" from buttons to ensure that the relevant buttons display in the navigation.
 
-- When a user clicks the "View Saved Covers" button, we should see the saved covers section, and the homepage view should be hidden
-- When the Saved Covers view is visible, the "Show New Random Cover" and "Save Cover" buttons should be hidden
-- When the Saved Covers view is visible, the "Home" button should be visible
+#### SCREENSHOTS
 
-For both the Make New Cover form section and the Saved Covers section:
+##### `  RANDOM COVER DISPLAYED AFTER USER CLICKS 'SHOW NEW RANDOM COVER' BUTTON ON MAIN PAGE  `
 
-- In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
-- When a user clicks the "Home" button, we should only see the Home section
-- When a user clicks the "Home" button, the home button should be hidden
-- When a user clicks the "Home" button, the "Show New Random Cover" and "Save Cover" buttons should be visible again
+<img width="600" alt="RANDOM COVER DISPLAYED AFTER USER CLICKS 'SHOW NEW RANDOM COVER' BUTTON ON MAIN PAGE (size:MED)" src="https://user-images.githubusercontent.com/10098034/82116106-517d3b80-9724-11ea-8a75-42971a4bcd26.png">
 
-_Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place_
+##### `  THE FORM DISPLAY AFTER USER CLICKS THE 'MAKE YOUR OWN FORM' BUTTON (DARK MODE)  `
 
-## Iteration 3 - Creating a New Cover
+<img width="600" alt="THE FORM DISPLAY AFTER USER CLICKS THE 'MAKE YOUR OWN FORM' BUTTON in *DARK MODE*  (size:MED)" src="https://user-images.githubusercontent.com/10098034/82116115-707bcd80-9724-11ea-9fb0-5a0b96b6f878.png">
+
+---
+### ITERATION 3: Creating a New Cover
+---
+
+#### Brief Synopsis of Objectives 
 
 - In the new cover form view, users should be able to fill out the four input fields and then hit the save button
 - When the save button is clicked, several things will happen:
@@ -105,99 +143,70 @@ _Hint: go check out the HTML and CSS files to see how the form and saved covers 
   - Change back to the main home view (hiding the form view again)
   - Display the newly created cover image, title, and descriptors in the main cover
 
-## Iteration 4 - Saving & Viewing Covers
 
-- When a user clicks the "Save Cover" button, the current cover will be added to the `savedCovers` array
+#### Summary of Progress
+
+* We added functionality to allow a user to create a new cover. 
+* To do so, we first created a function to save a user's input when they add new covers, titles, and descriptors to the form on the Make Your Own Cover page. 
+* We then created a function that generates a new instance of the Cover class with the user's input and displays it on the main page so that when a user returns Home, they see that cover. 
+* We also refactored some functions to make them more dynamic and fixed a bug in the titles array.
+
+#### SCREENSHOTS
+
+##### ` A USER GENERATED COVER WITH CONSOLE MESSAGES SHOWING 'SAVEDCOVERS' ARRAY INCLUDES AN ADDITIONAL COVER   `
+
+<img width="850" alt="USER GENERATED COVER WITH CONSOLE MESSAGES SHOWING 'SAVEDCOVERS' ARRAY INCLUDES AN ADDITIONAL COVER (size:LG)" src="https://user-images.githubusercontent.com/10098034/82116110-5c37d080-9724-11ea-85e9-30590f334fb5.png">
+
+---
+### ITERATION 4: Saving & Viewing Covers
+---
+
+#### Brief Synopsis of Objectives 
+
+- - When a user clicks the "Save Cover" button, the current cover will be added to the `savedCovers` array
 - If a user clicks the "Save Cover" more than once on a single cover, it will still only be saved once (no duplicates)
 - When a user clicks the "View Saved Covers" button, we should see the saved covers section
 - All the covers in the `savedCovers` array should be displayed in the saved covers section
 
-## Iteration 5 - Deleting Saved Covers
+#### Summary of Progress
 
-- From the saved covers view, if a user double clicks a saved poster, it will be deleted
+* Next, we added functionality so that when the 'Save Cover' button is clicked, the saveCurrentCover function is exectuted, which tests if that current cover matches one already in the savedCovers array, and if not, adds it to the array. 
+* Next, we expanded upon what happens when a user clicks 'View Saved Covers' by calling a new function, displayMiniCovers, at the end of our displaySavedView function. 
+* This new function replaces the innerHTML of the saved covers section with blocks of code for each cover, using string interpolation to insert its id, image, title, and descriptors. 
+* To get the covers to display correctly on the page, we used the insertAdjacentHTML() method and styled each block using the mini-cover CSS class.  
 
-_Hint: How will you update the data model to achieve this?_
-_Hint: Look into [this user event](https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)_
+#### SCREENSHOTS
 
-## Optional Extensions - Gettin' fancy
+##### `   THE GRID DISPLAY AFTER USER CLICKS 'VIEW SAVED COVERS' BUTTON, MINIATURE VERSIONS OF COVERS SAVED BY USER  `
 
-Here's a list of possible extensions to implement - but **ONLY IF** your team has completed all the previous iterations **AND** have cleaned up your code to make it DRYer and more readable.
+<img width="600" alt="THE GRID DISPLAY AFTER USER CLICKS 'VIEW SAVED COVERS' BUTTON, MINIATURE VERSIONS OF COVERS SAVED BY USER  size:MED"
+src="https://user-images.githubusercontent.com/10098034/82288054-dd7aa780-995e-11ea-8f1f-9363c229fd54.png">
 
-You are welcome to add your own extensions. Be sure they are thoughtful in terms of UX/UI, and that they do not break any prior functionality.
+---
+### ITERATION 5: (extra/optional) 
+---
 
-- Implement data validation and error handling into the form (disable the button until all fields are filled, provide error messages if data entered is not correct, etc)
-- When a user single clicks a saved cover, create a modal to view it larger
-- Allow users to drag and drop saved posters into whatever order they want them to appear
+#### Brief Synopsis of Objectives 
 
-## Rubric
+* From the saved covers view, if a user double clicks a saved poster, it will be deleted
+  - _Hint: How will you update the data model to achieve this?_
+  - _Hint: Look into [this user event](https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)_
 
-This rubric should serve as a guide for students as they progress through the project, as well as to self-evaluate. Instructors will use it to evaluate the project at its final due date/time, and provide detailed feedback so students know what areas to focus on in future projects.
+#### Summary of Progress
 
-Scores land in a range between 1 and 4. Below is a breakdown of what those numbers represent.
+* We added functionality so that when a user double-clicks a cover from the Saved Covers view, it is deleted. 
+  - We did so by creating an event listener for the savedCoversSection, which fires a function, deleteSelectedCover, when a cover is double-clicked. 
+  - The deleteSelectedCover function accesses the id associated with the specific element selected, and uses that to remove the cover with the corresponding id from the savedCovers array. 
+  - Then, the displayMiniCovers function is called again to re-render the saved Covers view with just the remaining elements in the savedCovers array.
 
-* **4 (exceptional)** - went beyond set learning goals; did self-teaching to go above and beyond in this area
-* **3 (proficient)** - exactly on track! you're where you need to be in this area! great work!
-* **2 (trailing)** - a little behind where we want to see you right now; in a good place to build familiarity/competency in this area; study in this area to level up and grow
-* **1 (dragging)** - significantly behind where we want to see you; major growth needs to be shown in this area; set up a pairing session with an instructor as soon as possible
+#### SCREENSHOTS
 
-To earn a given score, an application must meet the requirements listed in that score explanation and all scores lower.
+<!--
+##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
+![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
+##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
+<img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
+##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
+<img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
+-->
 
-### Professionalism
-
-* **4:** 
-  - Team uses a PR template
-  - Team habitually conducts thorough code reviews in the GitHub GUI to document the progress of the application
-  - Team has sought out code reviews from one or more mentors
-  - README is well formatted and descriptive with screenshots or gifs of the application in action
-* **3:** 
-  - Commits are atomic and frequent, effectively documenting the evolution/progression of the application
-  - Commit messages are consistent, descriptive, and concise
-  - Team uses PRs to screen/verify code before adding it to the master branch
-  - There is no more than a 10% disparity in code contributions between teammates
-  - README is well formatted and gives good context about the project, including links to both contributors' GitHub profiles, and to the deployed GitHub Pages site
-* **2:** 
-  - Commits are large and do not effectively communicate the progression of the application
-  - Team uses PRs but do not review code before merging into the master branch
-  - All teammates can speak to the purpose and functionality of any/every line of code
-  - There is a 20% disparity in code contributions between teammates
-  - README is brief and does not provide context for the project
-* **1:** 
-  - Teammates do not understand the purpose and functionality of every line of code
-  - Some commits are pushed directly to the master branch
-  - PRs are used inconsistently
-  - There is a 50% disparity in code contributions between teammates
-  - There is no README, or README is insufficient
-
-### JavaScript Style & Implementation
-
-* **4:** 
-  - There are no global variables aside from query selectors, `currentCover` and `savedCovers`.
-  - All functions strictly adhere to [SRP](http://knnthvu.weebly.com/srp-and-dry.html) and - with few exceptions - are around 10 lines of code or less
-  - All functions and variables are semantically and concisely named
-  - Uses logical operators instead of if/else statements where applicable
-  - Code contains no antipatterns
-* **3:** 
-  - Application uses event delegation correctly on dynamic elements
-  - Functions are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) and observe [SRP](http://knnthvu.weebly.com/srp-and-dry.html)
-  - Functions make use of parameters and arguments in order to be more dynamic
-* **2:** 
-  - Properly uses parameters and arguments when used
-  - Uses named functions instead of anonymous functions as event handlers in event listeners
-  - Correctly uses if/else statements to handle multiple paths of logic & error handling
-* **1:** 
-  - Crafts JS according to the [Turing JS style guide](https://github.com/turingschool-examples/javascript/tree/master/es5)
-
-
-### Functional Expectations
-
-Functionality is the least important piece of the rubric. It's included because it is another benchmark to gauge proficiency. However, you should not pursue functionality at the expense of code quality or the learning/growth of all team members.
-
-This means, we DO NOT want to see:
-- Code that completes iterations but is sloppy
-- One or both team members do not understand every single line of code
-- One or both team members skips the problem solving process (pseudocoding, talking out the problem, articulating, planning) in the pursuit of completing functionality
-
-* **4:** Applications completes one or more of the extensions without bugs
-* **3:** Application completes all the expectations of Iteration 4 without bugs
-* **2:** Application completes all the expectations of Iteration 3 without bugs
-* **1:** Application completes all the expectations of Iteration 2 without bugs
