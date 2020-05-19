@@ -217,6 +217,7 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### SCREENSHOTS
 
+![Screen Shot 2020-05-18 at 11 23 47 PM](https://user-images.githubusercontent.com/10098034/82288054-dd7aa780-995e-11ea-8f1f-9363c229fd54.png)
 <!--
 ##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
 
@@ -242,7 +243,11 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### Summary of Progress
 
-* In this iteration we... 
+* We added functionality so that when a user double-clicks a cover from the Saved Covers view, it is deleted. 
+  - We did so by creating an event listener for the savedCoversSection, which fires a function, deleteSelectedCover, when a cover is double-clicked. 
+  -The deleteSelectedCover function accesses the id associated with the specific element selected, and uses that to remove the cover with the corresponding id from the savedCovers array. 
+  -Then, the displayMiniCovers function is called again to re-render the saved Covers view with just the remaining elements in the savedCovers array.
+
 
 #### SCREENSHOTS
 
