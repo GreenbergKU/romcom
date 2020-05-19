@@ -49,11 +49,13 @@ People say that romance novels are formulaic. Well ... maybe that's true. We're 
 
 #### Brief Synopsis of Objectives 
 
-- - When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
+- When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
 
 #### Summary of Progress
 
-* First, we added functionality for the main page so it displays a random cover on page load. To achieve this, we used the getRandomIndex function to generate random covers, titles, and descriptors. We then altered the code for the mainCoverSection, using the .innerHTML property to change the cover, title, and descriptors to random values using string interpolation.
+* First, we added functionality for the main page so it displays a random cover on page load. 
+* To achieve this, we used the getRandomIndex function to generate random covers, titles, and descriptors. 
+* We then altered the code for the mainCoverSection, using the .innerHTML property to change the cover, title, and descriptors to random values using string interpolation.
 
 #### SCREENSHOTS
 
@@ -86,7 +88,12 @@ People say that romance novels are formulaic. Well ... maybe that's true. We're 
 
 #### Summary of Progress
 
-* In this iteration we... 
+* Next, we added functionality so that the user can continually generate new covers by clicking the "Show New Random Cover" button. 
+This action causes the getRandomBookCover function to execute, which assigns the currentCover variable to be a new instance of the Cover class with a random cover, title, and two descriptors. 
+* Then the displayCurrentCover function is called, which replaces the HTML in the main cover section with the values from that class instance to display the new cover. 
+These changes meant refactoring much of our code blocks from the previous iteration be more dynamic by placing them within functions. 
+Therefore, to get a random cover to generate on page load again, we added an 'onload' event handler that calls the getRandomBookCover function detailed above.
+
 
 #### SCREENSHOTS
 
@@ -125,7 +132,9 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### Summary of Progress
 
-* In this iteration we... 
+* Next, we added functionality to make the correct views appear when clicking the buttons, 'Make Your Own Cover', 'View Saved Covers', and 'Home'. 
+* By using the addEventListener() method, we were able to have a function for each view execute when each respective button is clicked. 
+* These functions use the classList() method to add the "hidden" class to all views that are not the one we want to display, as well as adding and removing "hidden" from buttons to ensure that the relevant buttons display in the navigation.
 
 #### SCREENSHOTS
 
@@ -167,7 +176,10 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### Summary of Progress
 
-* We added functionality to allow a user to create a new cover. To do so, we first created a function to save a user's input when they add new covers, titles, and descriptors to the form on the Make Your Own Cover page. We then created a function that generates a new instance of the Cover class with the user's input and displays it on the main page so that when a user returns Home, they see that cover. We also refactored some functions to make them more dynamic and fixed a bug in the titles array.
+* We added functionality to allow a user to create a new cover. 
+* To do so, we first created a function to save a user's input when they add new covers, titles, and descriptors to the form on the Make Your Own Cover page. 
+* We then created a function that generates a new instance of the Cover class with the user's input and displays it on the main page so that when a user returns Home, they see that cover. 
+* We also refactored some functions to make them more dynamic and fixed a bug in the titles array.
 
 #### SCREENSHOTS
 
@@ -198,7 +210,10 @@ For both the Make New Cover form section and the Saved Covers section:
 
 #### Summary of Progress
 
-* In this iteration we... 
+* Next, we added functionality so that when the 'Save Cover' button is clicked, the saveCurrentCover function is exectuted, which tests if that current cover matches one already in the savedCovers array, and if not, adds it to the array. 
+* Next, we expanded upon what happens when a user clicks 'View Saved Covers' by calling a new function, displayMiniCovers, at the end of our displaySavedView function. 
+* This new function replaces the innerHTML of the saved covers section with blocks of code for each cover, using string interpolation to insert its id, image, title, and descriptors. 
+* To get the covers to display correctly on the page, we used the insertAdjacentHTML() method and styled each block using the mini-cover CSS class.  
 
 #### SCREENSHOTS
 
