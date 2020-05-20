@@ -1,9 +1,4 @@
-<!--
-project: ROMCOM (paired)
-program: TURING MOD1 FE 2005
-title: README
-participants: Rachel Williams and Suzanne Wolf
--->
+
 ---
 # ROMCOM: paired project
 ---
@@ -201,12 +196,5 @@ src="https://user-images.githubusercontent.com/10098034/82288054-dd7aa780-995e-1
 
 #### SCREENSHOTS
 
-<!--
-##### `  UNSIZED IMG DESCRIPTION (img title/description/caption)  `
-![UNVIEWABLE ALT TEXT](https://user-images.githubusercontent.com.png)
-##### `  LARGE 100 DESCRIPTION (img title/description/caption)  `
-<img width="1000" alt="screenshot of Desktop Layout View after Iteration 0 complete" src="https://user-images.githubusercontent.com/10098034/79301186-25149c00-7ea6-11ea-83da-ebffbc945a6b.png">
-##### `  SMALL PIC 250 DESCRIPTION (img title/description/caption) `
-<img width="250" alt="SMALL PIC 250" src="https://user-images.githubusercontent.com/100.png"> 
--->
+![](Romcom-deletecovers.gif)
 
