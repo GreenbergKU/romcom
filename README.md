@@ -196,5 +196,5 @@ src="https://user-images.githubusercontent.com/10098034/82288054-dd7aa780-995e-1
 
 #### SCREENSHOTS
 
-
+![](Romcom-deletecovers.gif)
 
